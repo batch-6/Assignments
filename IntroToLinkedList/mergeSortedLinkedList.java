@@ -6,7 +6,6 @@ public class Main {
     {
         int val;
         Node next;
-        Node down;
     }
     public static class LinkedList {
         Node head;
@@ -36,7 +35,6 @@ public class Main {
         }
         public Node merge(Node head1, Node head2)
         {
-            // base cases
             if(head1==null && head2==null)
             {
                 return null;
@@ -50,8 +48,7 @@ public class Main {
                 return head1;
             }
 
-            // recursive
-            if(head1.val <= head2.val) // both are not null
+            if(head1.val <= head2.val)
             {
                 head1.next = merge(head1.next, head2);
                 return head1;
@@ -64,7 +61,6 @@ public class Main {
     public static void main(String args[]) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        int m = in.nextInt();
 
         LinkedList ll1 = new LinkedList();
         LinkedList ll2 = new LinkedList();
@@ -75,6 +71,7 @@ public class Main {
             ll1.insert(x);
         }
 
+        int m = in.nextInt();
         for(int i=0;i<m;i++)
         {
             int x = in.nextInt();
